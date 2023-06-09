@@ -1,7 +1,8 @@
 import './App.css';
 
-import {Header, Navbar, Profile} from "./components";
-
+import {Header} from "./Header/Header";
+import {Navbar} from "./Navbar/Navbar";
+import {Profile} from "./Profile/Profile";
 
 function App() {
     return (
