@@ -12,12 +12,14 @@ function App() {
             <div className="app-wrapper">
                 <Header/>
                 <Navbar/>
-                <Routes>
-                    <Route path="/profile" element={<Profile/>}/>
-                    <Route path="/messages" element={<Dialogs/>}/>
-                    <Route path="/music" element={<Music/>}/>
-                    <Route path="/settings" element={<Settings/>}/>
-                </Routes>
+                <div className="app-wrapper-item">
+                    <Routes>
+                        <Route path="/profile" element={<Profile/>}/>
+                        <Route path="/messages/*" element={<Dialogs/>}/>
+                        <Route path="/music" element={<Music/>}/>
+                        <Route path="/settings" element={<Settings/>}/>
+                    </Routes>
+                </div>
             </div>
         </BrowserRouter>
     );
