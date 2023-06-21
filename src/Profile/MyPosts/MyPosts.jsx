@@ -8,10 +8,10 @@ const MyPosts = (props) => {
     const postElements = props.post.map(p => <Post message={p.message} like={p.like}/>)
 
     const newPostElement = React.createRef()
-
     const addPost = () => {
+        debugger
         const text = newPostElement.current.value
-        alert(text)
+        props.addPost(text)
     }
 
     return (

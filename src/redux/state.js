@@ -1,8 +1,8 @@
 export const state = {
     profilePage: {
         posts: [
-            {message: "Hi how are you", like: "0"},
-            {message: "Its my first project", like: "23"}
+            {id: 1, message: "Hi how are you", like: "0"},
+            {id: 2, message: "Its my first project", like: "23"}
         ]
     },
     dialogPage: {
@@ -20,4 +20,13 @@ export const state = {
         ]
     }
 }
+
+export const addPost = (postMessage) => {
+    debugger
+    const newPost = {
+        id: 3, message: postMessage, like: "1"
+    }
+    state.profilePage.posts.push(newPost)
+}
+
 
