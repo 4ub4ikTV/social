@@ -5,7 +5,8 @@ export const state = {
         posts: [
             {id: 1, message: "Hi how are you", like: "0"},
             {id: 2, message: "Its my first project", like: "23"}
-        ]
+        ],
+        newPostText: "What`s up?"
     },
     dialogPage: {
         dialog: [
@@ -16,19 +17,43 @@ export const state = {
             {id: 5, name: "Vira"},
         ],
         message: [
-            {message: "Hi"},
-            {message: "How is your it-kamasutra?"},
-            {message: "Bye!"}
-        ]
+            {
+                id: 1,
+                message: "Hi"
+            },
+            {id: 2, message: "How is your it-kamasutra?"},
+            {id: 3, message: "Bye!"}
+        ],
+        newDialogText: 'Hello'
     }
 }
 
-export const addPost = (postMessage) => {
-    debugger
+export const addPost = () => {
     const newPost = {
-        id: 3, message: postMessage, like: "1"
+        id: 3,
+        message: state.profilePage.newPostText,
+        like: "1"
     }
     state.profilePage.posts.push(newPost)
+    state.profilePage.newPostText = ''
+    renderEntireTree(state)
+}
+export const updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText
+    renderEntireTree(state)
+}
+
+export const addDialog = () => {
+    const newMessage = {
+        id: 4,
+        message: state.dialogPage.newDialogText
+    }
+    state.dialogPage.message.push(newMessage)
+    state.dialogPage.newDialogText = ''
+    renderEntireTree(state)
+}
+export const updateNewDialogText = (newText) => {
+    state.dialogPage.newDialogText = newText
     renderEntireTree(state)
 }
 

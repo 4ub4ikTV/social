@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom/client';
 
 import './index.css';
 import App from './App';
-import {addPost} from "./redux/state";
+import {addDialog, addPost, updateNewDialogText, updateNewPostText} from "./redux/state";
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
 export const renderEntireTree = (state) => {
-    const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(
-        <App state={state} addPost={addPost}/>
+        <App state={state} addPost={addPost} updateNewPostText={updateNewPostText} updateNewDialogText={updateNewDialogText} addDialog={addDialog}/>
     );
 }
 
