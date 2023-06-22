@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom/client';
 
 import './index.css';
 import App from './App';
-import {addPost, state} from "./redux/state";
+import {addPost} from "./redux/state";
 
-export const renderEntireTree = () => {
+export const renderEntireTree = (state) => {
     const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(
-        <App appState={state} addPost={addPost}/>
+        <App state={state} addPost={addPost}/>
     );
 }
 
