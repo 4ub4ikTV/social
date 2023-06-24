@@ -19,7 +19,7 @@ function App(props) {
                                                                  addPost={props.addPost}
                                                                  updateNewPostText={props.updateNewPostText}/>}/>
                         <Route path="/messages/*" element={<Dialogs state={props.state.dialogPage}
-                                                                    addDialog = {props.addDialog}
+                                                                    addDialog={props.addDialog}
                                                                     updateNewDialogText={props.updateNewDialogText}/>}/>
                         <Route path="/music" element={<Music/>}/>
                         <Route path="/settings" element={<Settings/>}/>
